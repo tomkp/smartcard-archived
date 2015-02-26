@@ -1,0 +1,127 @@
+
+
+
+
+
+case1:	CLA 	INS 	p1 	p2	
+case2:	CLA 	INS 	p1 	p2 	lc 	data 	
+case3:	CLA 	INS 	p1 	p2 	le
+case4:	CLA 	INS 	p1 	p2 	lc 	data 	le
+
+
+
+9000		Normal processing
+
+61xx		Normal processing, (sw2 indicates the number of response bytes still available)
+
+Error:
+
+62xx		Warning processing
+					sw2	
+					00	no info
+					81	Part of return data may be corrupted
+					82	end of file/record reached before reading le bytes
+					83	ret data may contain structural info
+					84	selected file is invalidated
+					85	file control info not in required format
+					86	unsuccessful writing
+
+63xx		Warning processing
+					sw2	
+					00	no info
+					81	last write filled up file
+					82	execution successful after retry
+					c0	least significant nibble is a counter....
+					..	..valued from 0 to 15
+					cf
+					
+
+64xx		Execution error
+
+65xx		Execution error
+					sw2	
+					00	no info
+					81	memory failure
+
+
+66xx		Reserved for future use
+
+
+6700		Wrong length
+
+
+68xx		Checking error	:	functions in CLA not supported (see sw2)
+					sw2	
+					00	no info
+					81	logical channel not supported
+					82	secure messaging not supported
+
+
+69xx		Checking error	:	command not allowed (see sw2)
+
+6axx		Checking error	:	wrong parameters (p1 or p2)  (see sw2)
+
+6bxx		Checking error	:	wrong parameters
+
+6cxx		Checking error	:	wrong length (sw2 indicates correct length for le)
+
+6dxx		Checking error	:	wrong ins
+
+6exx		Checking error	:	class not supported
+
+6fxx		Checking error	:	no precise diagnosis
+
+
+
+
+
+
+
+9e
+case (byte)0x30	:   throw new AppErrorException(NO_OTHER_CURRENCY02);
+//	case (byte)0x30	:   throw new AppErrorException(NO_RECORD4);
+case (byte)0x25	:	throw new AppErrorException(NOT_ENOUGH_VALUE05);
+case (byte)0x26	:	throw new AppErrorException(EXCEEDS_LIMIT06);
+case (byte)0x00	:	throw new AppErrorException(CURRENCY_NOT_ACCEPTED07);
+case (byte)0x23	:	throw new AppErrorException(NO_SPARE_POCKET08);
+case (byte)0x12	:	throw new AppErrorException(CODE_NOT_SET09);
+case (byte)0x16	:	throw new AppErrorException(WRONG_CODE10);
+case (byte)0x15	:	throw new AppErrorException(LOCKED_OUT12);
+case (byte)0x17	:	throw new AppErrorException(CODE_NOT_ALLOWED13);
+case (byte)0x2A	:	throw new AppErrorException(TRANSFER_FAILED14);
+case (byte)0x27	:	throw new AppErrorException(EXCEPTION_LOG_FULL15);
+case (byte)0x14	:	throw new AppErrorException(PURSE_LOCKED17);
+case (byte)0x2B	:	throw new AppErrorException(RECOVERY_NOT_VALID20);
+case (byte)0x55	:	throw new AppErrorException(PURSE_WORN_OUT41);
+case (byte)0x20	:	throw new AppErrorException(PURSE_INCOMPATIBLE44);
+case (byte)0x21	:	throw new AppErrorException(PURSE_INCOMPATIBLE44);
+case (byte)0x22	:	throw new AppErrorException(PURSE_INCOMPATIBLE44);
+case (byte)0x24	:	throw new AppErrorException(PURSE_INCOMPATIBLE44);
+case (byte)0x2E	:	throw new AppErrorException(PURSE_INCOMPATIBLE44);
+default			:	throw new AppErrorException("DEF ERROR");
+									
+
+ff			
+case (byte)0x10	:	throw new IFDIFDException("IFD_HARDWARE_FAILURE");
+case (byte)0x11	:	throw new IFDIFDException("IFD_SOFTWARE_ERROR");
+case (byte)0x12	:	throw new IFDIFDException("AUTHENTICATION_METHOD_UNAVAILABLE");
+case (byte)0x13	:	throw new IFDIFDException("AUTHENTICATION_REFUSED_OR_UNSUCCESSFUL");
+case (byte)0x20	:	throw new IFDIFDException("ACD_HARDWARE_FAILURE");
+case (byte)0x21	:	throw new IFDIFDException("ACD_COMMUNICATIONS_ERROR");
+case (byte)0x22	:	throw new IFDIFDException("UNKNOWN_ACD");
+case (byte)0x30	:	throw new IFDIFDException("MESSAGE_CANNOT_BE_PROCESSED");
+case (byte)0x31	:	throw new IFDIFDException("BAD_MESSAGE_FORMAT");
+case (byte)0x32	:	throw new IFDIFDException("BAD_MESSAGE_CONTENT");
+case (byte)0x33	:	throw new IFDIFDException("UNKNOWN_COMMAND_MESSAGE_LENGTH");
+case (byte)0x36	:	throw new IFDIFDException("BAD_DATA_BLOCK_LENGTH");
+case (byte)0x40	:	throw new IFDIFDException("NO_RESPONSE_POSSIBLE");
+case (byte)0x41	:	throw new IFDIFDException("TIME_OUT");
+case (byte)0x51	:	throw new IFDIFDException("ABANDON_VALUE_TRANSFER_USER_INITIATED");
+case (byte)0x52	:	throw new IFDIFDException("ABANDON_VALUE_TRANSFER_SYSTEM_INITIATED");
+default			:	throw new IFDIFDException("IFD_IFD_ERROR");
+									
+			}
+
+
+
+
