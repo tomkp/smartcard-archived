@@ -9,19 +9,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "pcsclite": "^0.3.6",
-    "request": "^2.53.0",
+    "pcsclite": "^0.4.8",
+    "request": "^2.69.0",
     "tlv": "^1.1.1"
   },
   "devDependencies": {
-    "browserify": "^9.0.3",
-    "gulp": "^3.8.11",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-clean": "^0.3.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-util": "^3.0.3",
-    "node-webkit-builder": "^1.0.8",
-    "tape": "^3.5.0"
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.7",
+    "node-webkit-builder": "^1.0.13",
+    "tape": "^4.4.0"
   },
   "window": {
     "show": true,

@@ -24,6 +24,7 @@ var card = function (device, reader, status) {
         var selectFileCommand = iso.selectFile('1PAY.SYS.DDF01');
 
         issueCommand(selectFileCommand);
+
     };
 
 
